@@ -29,7 +29,10 @@ docker volume describe <volume id>
 ```
 
 ####
-you get the volume id by executing command docker volume ls
+you get the volume id by executing command 
+```
+docker volume ls
+```
 
 ### To prune the unused docker volumes
 ```
@@ -43,7 +46,7 @@ docker volume rm <volume id>
 
 ### Sample code for defining the docker volume in docker compose file
 
-`````
+```
 version: '3'
 services:
   jenkins:
@@ -61,7 +64,8 @@ services:
 
 volumes:
   jenkins_home:
-````
+
+```
 
 ### To tag the Volume to a container
 
