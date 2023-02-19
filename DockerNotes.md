@@ -1,6 +1,105 @@
 # Notes on Docker
 
-## Docker Compose Command
+# Docker 
+
+## Docker commands
+
+### To list the running containers
+```
+docker ps --all
+```
+
+### To list all the docker images available in local
+
+```
+docker images
+```
+
+### To build the docker image with Dockerfile with filename Dockerfile
+
+```
+docker build -t <image/name> .
+
+-t -- to tag name to image 
+```
+
+#### if the filename is not Dockerfile, then use the below command
+
+```
+docker build -t <image/name> -f <filname> .
+```
+
+### To create a container using the image
+
+```
+docker create -n konman/jenkins <image name>
+-n will tag name to a container created
+
+```
+
+container id will be created
+
+### To start a container
+```
+docker start <container id>
+```
+
+### Stop running container
+```
+docker stop <containerId/ container-name>
+```
+
+### To directly run a container
+
+```
+docker run -p 3000:3000 -n konman-name <image-name>
+```
+
+### To prune all the images
+
+```
+docker system prune -a
+```
+
+### to create a container using a docker image
+
+
+
+
+
+
+## Docker Compose
+
+### What is Docker Compose?
+Compose is a tool for defining and running multi-container Docker applications
+
+Example for Docker Compose
+```
+version: '3'
+# Define services
+services:
+  # Service Jenkins
+  jenkins:
+  	# Build to define the Dockerfile to use for the container
+    build: 
+      dockerfile: Dockerfile
+      context: ./jenkins
+    # To expose ports inside the network
+    expose:
+      - 5000
+    # to expose the ports in the network and host
+    ports:
+      - "8080:8080"
+      - "5001:5000"
+    # to define the volumes
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    restart: on-failure
+
+# Volumes created
+volumes:
+  jenkins_home:
+```
 
 ### To start the containers define the docker compose, execute the below command in the directory where docker-compose.yml file present
 ```
