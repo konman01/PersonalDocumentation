@@ -1,5 +1,23 @@
 # Notes on Docker
 
+## Docker Compose Command
+
+### To start the containers define the docker compose, execute the below command in the directory where docker-compose.yml file present
+```
+docker compose up
+```
+
+### To stop the containers defined in the docker compose, execuet the below command in the directory where docker-compose.yml file present
+```
+docker compose down
+```
+
+### if the docker compose filename is different, then start the container with the below command
+
+```
+docker compose -f <fileName> build
+```
+
 ## Difference Between Publish and Ports in Docker
 
 The expose section allows us to expose specific ports from our container only to other services on the same network. We can do this simply by specifying the container ports.
