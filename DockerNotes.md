@@ -4,18 +4,18 @@
 
 ## Docker commands
 
-### To list the running containers
+### List the running containers
 ```
 docker ps --all
 ```
 
-### To list all the docker images available in local
+### List all the docker images available in local
 
 ```
 docker images
 ```
 
-### To build the docker image with Dockerfile with filename Dockerfile
+### Build the docker image with Dockerfile with filename Dockerfile
 
 ```
 docker build -t <image/name> .
@@ -29,7 +29,7 @@ docker build -t <image/name> .
 docker build -t <image/name> -f <filname> .
 ```
 
-### To create a container using the image
+### Create a container using the image
 
 ```
 docker create -n konman/jenkins <image name>
@@ -39,7 +39,7 @@ docker create -n konman/jenkins <image name>
 
 container id will be created
 
-### To start a container
+### Start a container
 ```
 docker start <container id>
 ```
@@ -49,23 +49,17 @@ docker start <container id>
 docker stop <containerId/ container-name>
 ```
 
-### To directly run a container
+### Directly run a container
 
 ```
 docker run -p 3000:3000 -n konman-name <image-name>
 ```
 
-### To prune all the images
+### Prune all the images
 
 ```
 docker system prune -a
 ```
-
-### to create a container using a docker image
-
-
-
-
 
 
 ## Docker Compose
